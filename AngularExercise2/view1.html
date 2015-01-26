@@ -1,19 +1,17 @@
-<div id="container">
-            <input type="text" ng-model="filterData"/>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td>Product</td>
-                        <td>Price</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in shoppingList | filter:filterData | orderBy:'price'">
-                        <td>{{item.product}}</td>
-                        <td>{{item.price}}</td>
-                    </tr>
-                </tbody>
-            </table>
-    <br>
-    <a href="#/">Add product</a>
-</div>
+<input type="text" ng-model="filterData" />
+    <table align="center"> <!--border="1"-->
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in products | filter:filterData | orderBy:'price'">
+                <td>{{item.product}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+<br>
+<a href="#/">Add product</a>
