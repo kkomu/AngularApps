@@ -13,6 +13,7 @@ app.use(function(req,res,next) {
 // Middleware for user data
 app.use("/data", user);
 
-app.use(express.static(path.join(__dirname, "public")));
+//app.use(express.static(path.join(__dirname, "app")));
+app.use(express.static(__dirname));
 
 app.listen(3000);

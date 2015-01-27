@@ -1,0 +1,20 @@
+<div>
+    <h1>Mini Market products</h1>
+    <table class="prd_table" border="1">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Product price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in products">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a href="#/add">Add products</a>
+</div>
