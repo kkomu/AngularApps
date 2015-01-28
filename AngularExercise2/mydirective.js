@@ -5,7 +5,9 @@ module.directive("myDirective", function() {
         restrict: "AEC",
         scope: {
             temp: "@",
-            city: "@"
+            city: "@",
+            location: "@"
+            
         },
         templateUrl: "mydirective.html",
         controller: "DirectiveController"
@@ -14,9 +16,8 @@ module.directive("myDirective", function() {
 });
 
 module.controller("DirectiveController", function($scope, $resource) {
-    //var data = $resource('http://api.openweathermap.org/data/2.5/weather?q="Oulu,fi"').get(function() {
-    
-    var data = $resource('http://api.openweathermap.org/data/2.5/weather?q=location').get(function() {
+    console.log($scope.location);
+    var data = $resource('http://api.openweathermap.org/data/2.5/weather?q=:location',{location: $scope.location}).get(function() {
         console.log(data);
         $scope.temp = data.main.temp;
         $scope.city = data.name;
