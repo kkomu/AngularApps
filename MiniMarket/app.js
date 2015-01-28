@@ -6,7 +6,7 @@ var app = express();
 
 // This function call is executed for every request. MUST be first app.use-line
 app.use(function(req,res,next) {
-    console.log(req.method);
+    console.log(req.method+" -> "+req.path);
     next();
 });
 

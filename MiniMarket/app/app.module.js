@@ -2,22 +2,28 @@
 
 var mainMod = angular.module("MiniMarket",["ngRoute"]);
 
-mainMod.factory("ProductFactory", function($http) {
+mainMod.factory("ProductFactory", function($http,$q) {
     var factory = {};
-    
+ 
     factory.getProducts = function(scope) {
+        var deferred = $q.defer();
         
         $http.get("/data")
             .success(function(data, status, headers, config) {
                 console.log(data);
-                scope.products = data;
+                deferred.resolve(data);
             })
             .error(function(data, status, headers, config) {
                 console.log("error loading data");
             });
     
+        return deferred.promise;   
     };
     
+    
+    
+    
+    // TBD
     factory.addProduct = function() {
         /*    
         $http.post("/data")

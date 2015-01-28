@@ -1,6 +1,10 @@
 'use strict';
 
 mainMod.controller("ProductController", function($scope,ProductFactory) {
-    ProductFactory.getProducts($scope);
+    
+    // Wait here that we get response from server
+    ProductFactory.getProducts().then(function(data) {
+        $scope.products = data;
+    });
     
 });
