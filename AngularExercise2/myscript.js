@@ -1,4 +1,4 @@
-var ShopApp = angular.module('ShopApp',['ngRoute']);
+var ShopApp = angular.module('ShopApp',['ngRoute','mvModule']);
 
 ShopApp.config(function($routeProvider) {
     $routeProvider.when('/', {

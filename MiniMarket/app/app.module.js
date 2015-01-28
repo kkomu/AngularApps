@@ -1,6 +1,6 @@
 'use strict';
 
-var mainMod = angular.module("MiniMarket",["ngRoute","mvModule"]);
+var mainMod = angular.module("MiniMarket",["ngRoute"]);
 
 mainMod.factory("ProductFactory", function($http,$q) {
     var factory = {};
