@@ -7,11 +7,11 @@ mainMod.config(function ($routeProvider) {
     
     $routeProvider.when('/', {
         controller: "ProductController",
-        templateUrl: "./app/components/products/productsView.html"
+        templateUrl: "./components/products/productsView.html"
     });
     
     $routeProvider.when('/add', {
         controller: "AddProductController",
-        templateUrl: "./app/components/addproduct/addproductView.html"
+        templateUrl: "./components/addproduct/addproductView.html"
     });
 });
