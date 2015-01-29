@@ -1,21 +1,24 @@
 <div class="container">
     <h1>Mini Market products</h1>
-        
-    <table class="prd_table" border="1">
+    <p ng-show="products.length === 0">There are no products. Please add some.</p>
+    <table ng-show="products.length > 0" class="prd_table" border="0">
         <thead>
             <tr>
                 <th>Product name</th>
                 <th>Product price</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="product in products">
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
+                <td><button ng-click="deleteProduct($index)">Delete</button></td>
             </tr>
         </tbody>
     </table>
-
+    
     <br>
-    <a href="#/add">Add products</a>
+    <!--a href="#/add">Add product</a-->
+    <button ng-click="next()">Add product</button>
 </div>
