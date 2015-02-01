@@ -14,4 +14,9 @@ mainMod.config(function ($routeProvider) {
         controller: "AddProductController",
         templateUrl: "./components/addproduct/addproductView.html"
     });
+    
+    $routeProvider.when('/edit', {
+        controller: "EditProductController",
+        templateUrl: "./components/editproduct/editproductView.html"
+    });
 });

@@ -16,7 +16,6 @@ mainMod.controller("AddProductController", function($http,$q,$scope,$location,Pr
     
     };
     
-    
     // Handle Products-button
     $scope.back = function() {
         $location.path("/");

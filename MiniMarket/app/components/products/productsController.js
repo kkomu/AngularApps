@@ -35,4 +35,9 @@ mainMod.controller("ProductController", ["$scope","$location","$route","ProductF
         $location.path("/add");
     };
     
+    $scope.edit = function(data) {
+        console.log(data);
+        ProductFactory.viewProduct(data);
+    }
+    
 }]);

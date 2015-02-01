@@ -2,8 +2,10 @@
 
 var mainMod = angular.module("MiniMarket",["ngRoute","ngResource"]);
 
-mainMod.factory("ProductFactory", function($http, $q, $resource) {
+mainMod.factory("ProductFactory", function($http, $q, $resource, $location) {
     var factory = {};
+    
+    var productData = {};
     
     // List products
     factory.getProducts = function(scope) {
@@ -30,6 +32,30 @@ mainMod.factory("ProductFactory", function($http, $q, $resource) {
     factory.deleteProduct = function(index) {
         var req = $resource("/data", {id:index}, {"delete":{method: "DELETE"}});
         return req.delete().$promise;
+    };
+    
+    //
+    factory.viewProduct = function(data) {
+        console.log("factory: viewProduct");
+        console.log(data);
+        productData = data;
+        
+        $location.path("/edit");
+    };
+    
+    //
+    factory.getProductData = function() {
+        return productData;
+    };
+    
+    //
+    factory.editProduct = function(data) {
+        console.log("factory: editProduct");
+        console.log(data);
+        
+        var req = $resource("/data", {}, {"update":{method: "PUT"}});
+        return req.update(data).$promise;
+        
     };
     
     return factory;

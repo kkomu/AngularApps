@@ -20,6 +20,12 @@ router.post("/",function(req,res) {
 
 router.put("/",function(req,res) {
     console.log("express PUTTING");
+    dummy.splice(req.body.id,1);
+    var temp = {name: req.body.name, 
+                price: req.body.price};
+    
+    dummy.push(temp);
+    
 
 });
 
