@@ -1,26 +1,24 @@
-<div class="container">
+<div class="form-group"> <!-- class="container"-->
     <form>
         <fieldset>
             <legend>Apply your opinion</legend>
             <label for="beer-type">Select the beer type</label><br>
-            <select id="beer-type" ng-model="beer.type">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            <select class="form-control" id="beer-type" ng-model="beer.type">
+                <option ng-repeat="b in beerTypes">{{b.type}}</option>
             </select>
             <br>
             <label for="beer-name">Name of the beer</label><br>
-            <input type="text" id="beer-name" ng-model="beer.name" placeholder="Beer name"/>
+            <input class="form-control" type="text" id="beer-name" ng-model="beer.name" placeholder="Beer name"/>
             <br>
             <label for="beer-place">Where did you enjoyed it?</label><br>
-            <input type="text" id="beer-place" ng-model="beer.place" placeholder="Country, city, bar"/>
+            <input class="form-control" type="text" id="beer-place" ng-model="beer.place" placeholder="Country, city, bar"/>
             <br>
-            <label for="beer-review">What do you think of it?</label><br>
-            <input type="textarea" id="beer-review" ng-model="beer.review" placeholder="Review"/>
+            <label for="beer-review">How much did you like it? (0-5)</label><br>
+            <!--input type="textarea" id="beer-review" ng-model="beer.review" placeholder="Review"/-->
+            <input class="form-control" type="range" ng-model="beer.review" min="0" max="5" step="1"/>
             <br>
             <br>
-            <button ng-click="beer.post_beer()">Beer talk</button>
+            <button ng-click="beer.post_beer()">Save review</button>
         </fieldset>
     </form>
 </div>

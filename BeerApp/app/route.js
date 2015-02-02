@@ -6,5 +6,10 @@ mainMod.config(function ($routeProvider) {
         controller: 'PageOneController',
         templateUrl: './views/page1.html'
     });
+    
+    $routeProvider.when('/list', {
+        controller: 'PageTwoController',
+        templateUrl: './views/page2.html'
+    });
 
 });
