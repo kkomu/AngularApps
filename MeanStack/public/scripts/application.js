@@ -1,4 +1,4 @@
-var module = angular.module('MeanStack',['ngRoute','ngResource']);
+var module = angular.module('MeanStack',['ngRoute','ngResource','ui.bootstrap']);
 
 module.config(function($routeProvider){
     

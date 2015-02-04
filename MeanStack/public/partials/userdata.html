@@ -27,27 +27,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <div ng-repeat="msg in message.messages">
-                    <button data-target="#{{msg._id}}" class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="{{msg._id}}">{{msg.subject}}</button>
-                    <div class="collapse" id="{{msg._id}}">
-                        <div class="well">
-                            <p>{{msg.timestamp}}</p>
-                            <b>{{msg.text}}</b>
-                        </div>
-                    </div>
-                                                            
-                    <!--h4>{{msg.subject}}</h4>
-                    <p>{{msg.text}}</p-->
-                    <!--table class="table">
-                        <thead></thead>
-                        <tbody>
-                            <tr ng-repeat="msg in message.messages" class="success">
-                                <td>{{msg.subject}}</td>
-                                <td>{{msg.text}}</td>
-                            </tr> 
-                        </tbody>
-                    </table-->
-                </div>
+                <!--div ng-repeat="msg in message.messages"-->
+                <accordion close-others="oneAtATime">
+                    <accordion-group heading="{{msg.subject}}" ng-repeat="msg in message.messages">
+                        <p>{{msg.timestamp}}</p>
+                        <hr>
+                        <b>{{msg.text}}</b>
+                    </accordion-group>
+                </accordion>
+            <!--/div-->
             <!--div id="list"></div-->
             </div>
             <div class="col-md-6">
